@@ -1,0 +1,29 @@
+<!-- templates/image_upload.html -->
+{% extends "base.html" %}
+
+{% block title %}
+    RegenPGC View
+{% endblock title %}
+
+{% block header %}
+    RegenPGC View
+{% endblock header %}
+
+{% block content %}
+    <div>
+        <h2>
+            Upload Single Image
+        </h2>
+    </div>
+    <div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock content %}
+
+{% block footer %}
+    Footer content
+{% endblock footer %}

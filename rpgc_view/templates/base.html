@@ -1,0 +1,65 @@
+<!-- temmplates/base.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RegenPGC View</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+        <script defer src="{% static 'js/script.js' %}"></script>
+    </head>
+    <body>
+        <header>
+            <h1>
+                <a href={% url 'index' %}>
+                    RegenPGC View
+                <a/>
+            </h1>
+        </header>
+        <div class="container">
+            <div class="sidebar">
+                <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+                {% comment %} <button class="sidebar-toggle">☰</button> {% endcomment %}
+                <div class="sidebar-content">
+                    <h2><a href="{% url 'index' %}">Home</a></h2>
+                    <h2>PGC Predictions</h2>
+                    <div>
+                        <ul>
+                            <!-- <li><a href="{% url 'uploads' %}">Upload Images</a></li>
+                            <li><a href="{% url 'img_upload' %}">Upload Single Image</a></li>
+                            <li><a href="{% url 'inference' %}">PGC Inference</a></li>
+                            <li><a href="{% url 'status' %}">Job Status</a></li>
+                            <li><a href="{% url 'results' %}">Results</a></li> -->
+                            <li><a href="upload">Upload Images</a></li>
+                            <li><a href="#">Upload Single Image</a></li>
+                            <li><a href="#">PGC Inference</a></li>
+                            <li><a href="#">Job Status</a></li>
+                            <li><a href="#">Results</a></li>
+                        </ul>
+                    </div>
+                    <!-- <h2>Account</h2>
+                    <div>
+                        <ul>
+                            <li><a href="{% url 'account' %}">Settings</a></li>
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                        </ul>
+                    </div> -->
+                    
+                </div>
+            </div>
+            <div class="main-content">
+                {% block content %}{% endblock content %}
+            </div>
+        </div>
+        <footer>
+            <p>
+                &copy; 2024 RegenPGC View
+            </p>
+        </footer>
+    </body>
+</html>
